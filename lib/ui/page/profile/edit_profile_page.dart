@@ -41,33 +41,10 @@ class _EditProfilePageState extends State<EditProfilePage> {
             const SizedBox(
               height: 20,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  "Gender",
-                  style: kBlackTextStyle.copyWith(fontSize: 14),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                DropdownButtonFormField(
-                  decoration: inputDecoration("Choose"),
-                  isDense: true,
-                  onChanged: (value) {},
-                  items: ["Male", "Female"]
-                      .map<DropdownMenuItem<String>>(
-                        (String value) => DropdownMenuItem<String>(
-                          value:
-                              value, // add this property an pass the _value to it
-                          child: Text(
-                            value,
-                          ),
-                        ),
-                      )
-                      .toList(),
-                )
-              ],
+            const CustomDropdownField(
+              "Gender",
+              formName: "formName",
+              hint: "Choose Gender",
             ),
             const SizedBox(
               height: 20,
