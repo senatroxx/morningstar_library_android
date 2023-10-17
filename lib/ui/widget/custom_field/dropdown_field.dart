@@ -26,7 +26,7 @@ class CustomDropdownField extends StatelessWidget {
       children: [
         Text(
           title,
-          style: kBlackTextStyle.copyWith(fontSize: 14),
+          style: kSmallTextStyle,
         ),
         const SizedBox(
           height: 10,

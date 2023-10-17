@@ -39,7 +39,7 @@ class CustomTextField extends StatelessWidget {
       children: [
         Text(
           title,
-          style: kBlackTextStyle.copyWith(fontSize: 14),
+          style: kSmallTextStyle,
         ),
         const SizedBox(
           height: 10,
@@ -60,7 +60,7 @@ class CustomTextField extends StatelessWidget {
             //   ValidationMessage.minLength: 'Minimal 8 karakter'
             // },
             initialValue: initialValue,
-            style: kBlackTextStyle,
+            style: kSmallTextStyle,
             onTap: onTap,
             readOnly: readOnly,
             textInputAction: textInputAction,

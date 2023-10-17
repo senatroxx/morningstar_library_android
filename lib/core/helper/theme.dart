@@ -15,18 +15,86 @@ Color kPrimaryColor = Color(TW3Colors.blue.shade500.value);
 const Color kWhiteBgColor = Color(0xFFF6F9FF);
 Color kBlackColor = Color(TW3Colors.neutral.shade700.value);
 Color kSubtitleColor = Color(TW3Colors.neutral.shade500.value);
+Color kBorderColor = Color(TW3Colors.neutral.shade200.value);
+Color kDangerColor = Color(TW3Colors.red.shade500.value);
 const Color kGreyColor = Color(0xFF9F9F9F);
 const Color kWhiteColor = Color(0xFFFFFFFF);
 const Color kStarColor = Color(0xFFFFC700);
 const Color kStrokeColor = Color(0xFFDBDBDB);
 
-TextStyle kBlackTextStyle = TextStyle(color: kBlackColor);
-TextStyle kSubtitleTextStyle = TextStyle(color: kSubtitleColor);
-TextStyle kSubtitleTextStyle2 = const TextStyle(color: kGreyColor);
-TextStyle kWhiteTextStyle = const TextStyle(color: kWhiteColor);
-TextStyle kWhiteBgTextStyle = const TextStyle(color: kWhiteBgColor);
-TextStyle kYellowTextStyle = const TextStyle(color: kStarColor);
-TextStyle kOrangeTextStyle = TextStyle(color: kPrimaryColor);
+// TextStyle kBlackTextStyle = TextStyle(color: kBlackColor);
+// TextStyle kSubtitleTextStyle = TextStyle(color: kSubtitleColor);
+// TextStyle kSubtitleTextStyle2 = const TextStyle(color: kGreyColor);
+// TextStyle kWhiteTextStyle = const TextStyle(color: kWhiteColor);
+// TextStyle kWhiteBgTextStyle = const TextStyle(color: kWhiteBgColor);
+// TextStyle kYellowTextStyle = const TextStyle(color: kStarColor);
+// TextStyle kOrangeTextStyle = TextStyle(color: kPrimaryColor);
+
+TextStyle kHeadline1TextStyle = TextStyle(
+  fontSize: 36,
+  fontWeight: FontWeight.w600,
+  color: kBlackColor,
+);
+
+TextStyle kHeadline2TextStyle = TextStyle(
+  fontSize: 30,
+  fontWeight: FontWeight.w600,
+  color: kBlackColor,
+);
+
+TextStyle kHeadline3TextStyle = TextStyle(
+  fontSize: 24,
+  fontWeight: FontWeight.w600,
+  color: kBlackColor,
+);
+
+TextStyle kHeadline4TextStyle = TextStyle(
+  fontSize: 20,
+  fontWeight: FontWeight.w600,
+  color: kBlackColor,
+);
+
+TextStyle kLargeTextStyle = TextStyle(
+  fontSize: 18,
+  fontWeight: FontWeight.w400,
+  color: kBlackColor,
+);
+
+TextStyle kLargeSemiBoldTextStyle = TextStyle(
+  fontSize: 18,
+  fontWeight: FontWeight.w600,
+  color: kBlackColor,
+);
+
+TextStyle kBaseTextStyle = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.w400,
+  color: kBlackColor,
+);
+
+TextStyle kBaseSemiBoldTextStyle = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.w600,
+  color: kBlackColor,
+);
+
+TextStyle kSmallTextStyle = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+  color: kBlackColor,
+);
+
+TextStyle kSmallSemiBoldTextStyle = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w600,
+  color: kBlackColor,
+);
+
+TextStyle kSubtitleTextStyle = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+  color: kSubtitleColor,
+);
 
 ThemeData myTheme() {
   return ThemeData(
@@ -37,8 +105,8 @@ ThemeData myTheme() {
     listTileTheme: ListTileThemeData(
       contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
       tileColor: Colors.white,
-      textColor: TW3Colors.neutral.shade700,
-      iconColor: TW3Colors.neutral.shade700,
+      textColor: kBlackColor,
+      iconColor: kBlackColor,
       titleTextStyle: const TextStyle(
         fontSize: 16,
       ),

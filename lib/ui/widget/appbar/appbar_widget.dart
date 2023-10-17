@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:morningstar_library/routes/routes.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;
@@ -22,12 +21,24 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         title: Text(
           title,
         ),
-        leading: leading,
+        leading: title != "Morningstar"
+            ? IconButton(
+                icon: const Icon(
+                  Icons.chevron_left,
+                  size: 36,
+                ),
+                onPressed: () {
+                  Modular.to.maybePop();
+                },
+              )
+            : null,
+        automaticallyImplyLeading: false,
         actions: showAction
             ? [
                 ElevatedButton(
                   onPressed: () {
-                    Modular.to.pushNamed(Routes.profile);
+                    // Modular.to.pushNamed(Routes.profile);
+                    Scaffold.of(context).openDrawer();
                   },
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all(const CircleBorder()),

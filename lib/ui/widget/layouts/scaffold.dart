@@ -19,6 +19,7 @@ class MyScaffold extends StatelessWidget {
     return SafeArea(
       top: false,
       child: Scaffold(
+        drawer: DrawerMenu(),
         extendBodyBehindAppBar: true,
         appBar: MyAppBar(
           title: title,
