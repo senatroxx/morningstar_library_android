@@ -6,8 +6,8 @@ import 'package:morningstar_library/ui/widget/button/button.dart';
 import 'package:morningstar_library/ui/widget/custom_field/custom_field.dart';
 import 'package:morningstar_library/ui/widget/layouts/layouts.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
