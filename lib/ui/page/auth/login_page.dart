@@ -45,9 +45,9 @@ class LoginPage extends StatelessWidget {
               height: 90,
             ),
             const CustomTextField(
-              "Full Name",
+              "Email",
               formName: "formName",
-              icon: Icon(Icons.person),
+              icon: Icon(Icons.email),
             ),
             const CustomTextField(
               "Password",
