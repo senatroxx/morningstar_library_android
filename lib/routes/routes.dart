@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:morningstar_library/ui/page/auth/login_page.dart';
 import 'package:morningstar_library/ui/page/auth/register_page.dart';
 import 'package:morningstar_library/ui/page/page.dart';
 
@@ -36,6 +37,9 @@ class AppRoute extends Module {
         transition: TransitionType.noTransition);
     r.child(Routes.register,
         child: (context) => const RegisterPage(),
+        transition: TransitionType.noTransition);
+    r.child(Routes.login,
+        child: (context) => const LoginPage(),
         transition: TransitionType.noTransition);
     // r.child(Routes.bookmark,
     //     child: (context) => const BookmarkPage(),
