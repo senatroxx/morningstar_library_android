@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:morningstar_library/ui/page/auth/login_page.dart';
 import 'package:morningstar_library/ui/page/page.dart';
 
 class Routes {
@@ -7,6 +8,8 @@ class Routes {
   static const editProfile = "/profile/edit";
   static const search = "/search";
   static const bookmark = "/bookmark";
+  static const login = "/login";
+  static const register = "/register";
 }
 
 class AppRoute extends Module {
@@ -31,5 +34,11 @@ class AppRoute extends Module {
     r.child(Routes.bookmark,
         child: (context) => const BookmarkPage(),
         transition: TransitionType.noTransition);
+    r.child(Routes.login,
+        child: (context) => const LoginPage(),
+        transition: TransitionType.noTransition);
+    // r.child(Routes.bookmark,
+    //     child: (context) => const BookmarkPage(),
+    //     transition: TransitionType.noTransition);
   }
 }

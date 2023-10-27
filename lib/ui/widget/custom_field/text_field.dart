@@ -37,10 +37,6 @@ class CustomTextField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(
-          title,
-          style: kSmallTextStyle,
-        ),
         const SizedBox(
           height: 10,
         ),
@@ -70,7 +66,7 @@ class CustomTextField extends StatelessWidget {
             obscureText: hideText,
             minLines: 1,
             maxLines: title.contains("Alamat Lengkap") ? 3 : 1,
-            decoration: inputDecoration(hint, borderAll: borderAll).copyWith(
+            decoration: inputDecoration(title, borderAll: borderAll).copyWith(
               prefixIcon: icon,
               suffixIcon: showArrow
                   ? Icon(

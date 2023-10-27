@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // import 'package:reactive_date_time_picker/reactive_date_time_picker.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:morningstar_library/core/helper/helper.dart';
+import 'package:tailwind_colors/tailwind_colors.dart';
 
 part 'text_field.dart';
 part 'dropdown_field.dart';
@@ -27,15 +28,12 @@ InputDecoration inputDecoration(hint, {bool borderAll = false, Color? color}) =>
       hintText: hint,
       focusedBorder: outlineInputPrimary.copyWith(
           borderSide: BorderSide(color: color ?? kPrimaryColor)),
-      enabledBorder: borderAll
-          ? outlineInputPrimary.copyWith(
-              borderSide: BorderSide(color: color ?? kPrimaryColor))
-          : null,
+      enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: TW3Colors.neutral.shade300)),
       isDense: true,
-      // hintStyle: kSubtitleTextStyle.copyWith(
-      //     fontSize: 14, overflow: TextOverflow.visible),
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
-        borderSide: BorderSide.none,
+      hintStyle: kSubtitleTextStyle.copyWith(
+        fontSize: 14,
+        overflow: TextOverflow.visible,
       ),
     );

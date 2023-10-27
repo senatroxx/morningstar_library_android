@@ -105,7 +105,7 @@ class DrawerMenu extends StatelessWidget {
             "Logout",
             icon: Icons.logout,
             color: kDangerColor,
-            route: Routes.home,
+            route: Routes.login,
           ),
         ],
       ),
