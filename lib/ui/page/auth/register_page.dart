@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:morningstar_library/core/helper/helper.dart';
-import 'package:morningstar_library/routes/routes.dart';
-import 'package:morningstar_library/ui/widget/button/button.dart';
-import 'package:morningstar_library/ui/widget/custom_field/custom_field.dart';
-import 'package:morningstar_library/ui/widget/layouts/layouts.dart';
+part of '../page.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});

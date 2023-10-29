@@ -1,6 +1,4 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:morningstar_library/ui/page/auth/login_page.dart';
-import 'package:morningstar_library/ui/page/auth/register_page.dart';
 import 'package:morningstar_library/ui/page/page.dart';
 
 class Routes {

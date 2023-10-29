@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:morningstar_library/core/helper/helper.dart';
-import 'package:morningstar_library/routes/routes.dart';
-import 'package:morningstar_library/ui/widget/button/button.dart';
-import 'package:morningstar_library/ui/widget/custom_field/custom_field.dart';
-import 'package:morningstar_library/ui/widget/layouts/layouts.dart';
+part of '../page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -35,9 +29,9 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 55,
             ),
-            Text("Login", style: kHeadline1TextStyle),
+            Text("Sign Up", style: kHeadline1TextStyle),
             Text(
-              "Login an account to get started",
+              "Access to your account",
               style: kBaseTextStyle,
               textAlign: TextAlign.center,
             ),

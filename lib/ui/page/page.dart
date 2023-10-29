@@ -17,3 +17,5 @@ part 'profile/profile_page.dart';
 part 'profile/edit_profile_page.dart';
 part 'search/search_page.dart';
 part 'bookmark/bookmark_page.dart';
+part 'auth/login_page.dart';
+part 'auth/register_page.dart';
