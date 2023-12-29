@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:morningstar_library/core/helper/helper.dart';
+import 'package:morningstar_library/routes/routes.dart';
 import 'package:tailwind_colors/tailwind_colors.dart';
 
 class MyBottomNav extends StatefulWidget {
+  final Function(int) callbackfunc;
+
   const MyBottomNav({
+    required this.callbackfunc,
     super.key,
   });
 
@@ -17,6 +23,8 @@ class _MyBottomNavState extends State<MyBottomNav> {
     setState(() {
       _selectedIndex = index;
     });
+
+    widget.callbackfunc(index);
   }
 
   @override
@@ -24,6 +32,7 @@ class _MyBottomNavState extends State<MyBottomNav> {
     return BottomNavigationBar(
       unselectedItemColor: TW3Colors.neutral.shade700,
       selectedItemColor: TW3Colors.blue.shade500,
+      backgroundColor: kWhiteColor,
       elevation: 0,
       showUnselectedLabels: false,
       showSelectedLabels: false,

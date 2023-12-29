@@ -11,6 +11,7 @@ import 'package:morningstar_library/ui/widget/custom_field/custom_field.dart';
 import 'package:morningstar_library/ui/widget/layouts/layouts.dart';
 import 'package:morningstar_library/ui/widget/widget.dart';
 import 'package:tailwind_colors/tailwind_colors.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 part 'home/home_page.dart';
 part 'profile/profile_page.dart';

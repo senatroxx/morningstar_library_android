@@ -12,7 +12,7 @@ FontWeight extraBold = FontWeight.w800;
 FontWeight black = FontWeight.w900;
 
 Color kPrimaryColor = Color(TW3Colors.blue.shade500.value);
-const Color kWhiteBgColor = Color(0xFFF6F9FF);
+Color kWhiteBgColor = Color(TW3Colors.gray.shade100.value);
 Color kBlackColor = Color(TW3Colors.neutral.shade700.value);
 Color kSubtitleColor = Color(TW3Colors.neutral.shade500.value);
 Color kBorderColor = Color(TW3Colors.neutral.shade200.value);

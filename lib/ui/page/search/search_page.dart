@@ -5,6 +5,16 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MyScaffold(child: Text("Search Page"));
+    return const MyScaffold(
+      child: Column(
+        children: [
+          CustomTextField(
+            "Search",
+            formName: "formName",
+            icon: Icon(Icons.search),
+          )
+        ],
+      ),
+    );
   }
 }

@@ -13,6 +13,7 @@ void main() {
       statusBarIconBrightness: Brightness.light,
     ),
   );
+  Modular.setInitialRoute('/');
   runApp(ModularApp(module: AppRoute(), child: const MyApp()));
 }
 
