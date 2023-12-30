@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:morningstar_library/core/helper/helper.dart';
-import 'package:morningstar_library/routes/routes.dart';
 import 'package:tailwind_colors/tailwind_colors.dart';
 
 class MyBottomNav extends StatefulWidget {
@@ -36,6 +34,7 @@ class _MyBottomNavState extends State<MyBottomNav> {
       elevation: 0,
       showUnselectedLabels: false,
       showSelectedLabels: false,
+      type: BottomNavigationBarType.fixed,
       currentIndex: _selectedIndex,
       onTap: _onItemTapped,
       items: const [
@@ -44,11 +43,18 @@ class _MyBottomNavState extends State<MyBottomNav> {
           label: "Home",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.search),
-          label: "Search",
+          icon: Icon(Icons.library_books),
+          label: "My Library",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.bookmark),
+          icon: Icon(Icons.receipt),
+          label: "My Library",
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.workspace_premium,
+            color: TW3Colors.yellow,
+          ),
           label: "My Library",
         ),
       ],

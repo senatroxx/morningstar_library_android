@@ -18,29 +18,20 @@ class AppRoute extends Module {
   @override
   void routes(r) {
     super.routes(r);
-    r.child(Routes.home,
-        child: (context) => const HomePage(),
-        transition: TransitionType.noTransition);
-    r.child(Routes.profile,
-        child: (context) => const ProfilePage(),
-        transition: TransitionType.noTransition);
-    r.child(Routes.editProfile,
-        child: (context) => const EditProfilePage(),
-        transition: TransitionType.noTransition);
-    r.child(Routes.search,
-        child: (context) => const SearchPage(),
-        transition: TransitionType.noTransition);
-    r.child(Routes.bookmark,
-        child: (context) => const BookmarkPage(),
-        transition: TransitionType.noTransition);
-    r.child(Routes.register,
-        child: (context) => const RegisterPage(),
-        transition: TransitionType.noTransition);
-    r.child(Routes.login,
-        child: (context) => const LoginPage(),
-        transition: TransitionType.noTransition);
-    // r.child(Routes.bookmark,
-    //     child: (context) => const BookmarkPage(),
-    //     transition: TransitionType.noTransition);
+    r.child(Routes.home, child: (context) => const MainPage());
+    r.child(
+      Routes.profile,
+      child: (context) => const ProfilePage(),
+      transition: TransitionType.downToUp,
+    );
+    r.child(Routes.editProfile, child: (context) => const EditProfilePage());
+    r.child(
+      Routes.search,
+      child: (context) => const SearchPage(),
+      transition: TransitionType.downToUp,
+    );
+    r.child(Routes.bookmark, child: (context) => const BookmarkPage());
+    r.child(Routes.register, child: (context) => const RegisterPage());
+    r.child(Routes.login, child: (context) => const LoginPage());
   }
 }

@@ -31,66 +31,77 @@ const Color kStrokeColor = Color(0xFFDBDBDB);
 // TextStyle kOrangeTextStyle = TextStyle(color: kPrimaryColor);
 
 TextStyle kHeadline1TextStyle = TextStyle(
+  fontFamily: "Inter",
   fontSize: 36,
   fontWeight: FontWeight.w600,
   color: kBlackColor,
 );
 
 TextStyle kHeadline2TextStyle = TextStyle(
+  fontFamily: "Inter",
   fontSize: 30,
   fontWeight: FontWeight.w600,
   color: kBlackColor,
 );
 
 TextStyle kHeadline3TextStyle = TextStyle(
+  fontFamily: "Inter",
   fontSize: 24,
   fontWeight: FontWeight.w600,
   color: kBlackColor,
 );
 
 TextStyle kHeadline4TextStyle = TextStyle(
+  fontFamily: "Inter",
   fontSize: 20,
   fontWeight: FontWeight.w600,
   color: kBlackColor,
 );
 
 TextStyle kLargeTextStyle = TextStyle(
+  fontFamily: "Inter",
   fontSize: 18,
   fontWeight: FontWeight.w400,
   color: kBlackColor,
 );
 
 TextStyle kLargeSemiBoldTextStyle = TextStyle(
+  fontFamily: "Inter",
   fontSize: 18,
   fontWeight: FontWeight.w600,
   color: kBlackColor,
 );
 
 TextStyle kBaseTextStyle = TextStyle(
+  fontFamily: "Inter",
   fontSize: 16,
   fontWeight: FontWeight.w400,
   color: kBlackColor,
 );
 
 TextStyle kBaseSemiBoldTextStyle = TextStyle(
+  fontFamily: "Inter",
   fontSize: 16,
   fontWeight: FontWeight.w600,
   color: kBlackColor,
 );
 
 TextStyle kSmallTextStyle = TextStyle(
+  fontFamily: "Inter",
   fontSize: 14,
   fontWeight: FontWeight.w400,
   color: kBlackColor,
 );
 
 TextStyle kSmallSemiBoldTextStyle = TextStyle(
+  fontFamily: "Inter",
   fontSize: 14,
   fontWeight: FontWeight.w600,
   color: kBlackColor,
 );
 
 TextStyle kSubtitleTextStyle = TextStyle(
+  fontFamily: "Inter",
   fontSize: 14,
   fontWeight: FontWeight.w400,
   color: kSubtitleColor,

@@ -14,44 +14,38 @@ class _EditProfilePageState extends State<EditProfilePage> {
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      showAction: false,
-      showBottomNav: false,
       title: "Edit Profile",
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            profilePicture(),
-            const SizedBox(
-              height: 20,
-            ),
-            const CustomTextField(
-              "Full Name",
-              formName: "formName",
-              initialValue: "Jane Doe",
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const CustomTextField(
-              "Email",
-              formName: "formName",
-              initialValue: "janedoe@gmail.com",
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const CustomDropdownField(
-              "Gender",
-              formName: "formName",
-              hint: "Choose Gender",
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            ButtonPrimary(title: "Save Changes", callbackfunc: () {})
-          ],
-        ),
+      showAction: false,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          profilePicture(),
+          const SizedBox(
+            height: 20,
+          ),
+          const CustomTextField(
+            "Full Name",
+            formName: "formName",
+            initialValue: "Jane Doe",
+          ),
+          const CustomTextField(
+            "Email",
+            formName: "formName",
+            initialValue: "janedoe@gmail.com",
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          const CustomDropdownField(
+            "Gender",
+            formName: "formName",
+            hint: "Choose Gender",
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          ButtonPrimary(title: "Save Changes", callbackfunc: () {})
+        ],
       ),
     );
   }
