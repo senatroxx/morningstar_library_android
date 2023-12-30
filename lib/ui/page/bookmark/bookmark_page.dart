@@ -5,6 +5,6 @@ class BookmarkPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MyScaffold(child: Text("Bookmark Page"));
+    return Text("Bookmark Page");
   }
 }

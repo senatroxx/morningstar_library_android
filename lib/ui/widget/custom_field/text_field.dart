@@ -38,7 +38,7 @@ class CustomTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         const SizedBox(
-          height: 10,
+          height: 5,
         ),
         Container(
           // height: 50,
@@ -77,6 +77,9 @@ class CustomTextField extends StatelessWidget {
                   : null,
             ),
           ),
+        ),
+        const SizedBox(
+          height: 5,
         ),
       ],
     );
