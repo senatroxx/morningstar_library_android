@@ -44,14 +44,14 @@ class _MyBottomNavState extends State<MyBottomNav> {
           label: "Home",
         ),
         BottomNavigationBarItem(
-          activeIcon: Icon(Icons.receipt),
-          icon: Icon(Icons.receipt_outlined),
-          label: "Invoice",
-        ),
-        BottomNavigationBarItem(
           icon: Icon(Icons.favorite_outline),
           activeIcon: Icon(Icons.favorite),
           label: "Cart",
+        ),
+        BottomNavigationBarItem(
+          activeIcon: Icon(Icons.receipt),
+          icon: Icon(Icons.receipt_outlined),
+          label: "Invoice",
         ),
         BottomNavigationBarItem(
           icon: Icon(

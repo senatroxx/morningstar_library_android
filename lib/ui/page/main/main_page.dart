@@ -30,8 +30,8 @@ class _MainPageState extends State<MainPage> {
           index: _currentIndex,
           children: const [
             HomePage(),
+            BookFavoritePage(),
             InvoicePage(),
-            BookmarkPage(),
           ],
         ),
       ),

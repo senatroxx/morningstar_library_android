@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:image_cropper/image_cropper.dart';
@@ -21,7 +22,8 @@ part 'home/home_page.dart';
 part 'profile/profile_page.dart';
 part 'profile/edit_profile_page.dart';
 part 'search/search_page.dart';
-part 'bookmark/bookmark_page.dart';
 part 'invoice/invoice_page.dart';
 part 'auth/login_page.dart';
 part 'auth/register_page.dart';
+part 'book/detail_page.dart';
+part 'book/favorite_page.dart';

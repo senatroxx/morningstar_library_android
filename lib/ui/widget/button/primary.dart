@@ -16,6 +16,9 @@ class ButtonPrimary extends StatelessWidget {
   final VoidCallback? callbackfunc;
   final ButtonPrimarySize size;
   final bool fullWidth;
+  final Color? color;
+  final Color? fontColor;
+  final BorderSide? borderSide;
 
   const ButtonPrimary({
     Key? key,
@@ -23,6 +26,9 @@ class ButtonPrimary extends StatelessWidget {
     required this.callbackfunc,
     this.size = ButtonPrimarySize.medium,
     this.fullWidth = false,
+    this.color,
+    this.fontColor,
+    this.borderSide,
   }) : super(key: key);
 
   @override
@@ -33,8 +39,9 @@ class ButtonPrimary extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: size.x, vertical: size.y),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
+          side: borderSide ?? BorderSide.none,
         ),
-        backgroundColor: kPrimaryColor,
+        backgroundColor: color ?? kPrimaryColor,
       ).merge(
         ButtonStyle(
           elevation: MaterialStateProperty.all(0),
@@ -43,7 +50,10 @@ class ButtonPrimary extends StatelessWidget {
           ),
         ),
       ),
-      child: Text(title, style: kBaseTextStyle.copyWith(color: kWhiteColor)),
+      child: Text(title,
+          style: kBaseTextStyle.copyWith(
+            color: fontColor ?? kWhiteColor,
+          )),
     );
   }
 }

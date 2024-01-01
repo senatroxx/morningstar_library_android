@@ -4,6 +4,7 @@ class MyScaffold extends StatelessWidget {
   final Widget child;
   final String title;
   final bool showAction;
+  final Widget? bottomNavigationBar;
   final bool showAppBar;
 
   const MyScaffold({
@@ -11,6 +12,7 @@ class MyScaffold extends StatelessWidget {
     this.title = "Morningstar",
     this.showAction = true,
     this.showAppBar = true,
+    this.bottomNavigationBar,
     super.key,
   });
 
@@ -22,20 +24,21 @@ class MyScaffold extends StatelessWidget {
       top: false,
       child: Scaffold(
         extendBodyBehindAppBar: true,
+        bottomNavigationBar: bottomNavigationBar,
         appBar: showAppBar
             ? MyAppBar(
                 title: title,
                 showAction: showAction,
               )
             : null,
-        body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: BoxDecoration(
-            color: kWhiteBgColor,
-          ),
-          padding: EdgeInsets.fromLTRB(20, topPadding, 20, 0),
-          child: SingleChildScrollView(
+        body: SingleChildScrollView(
+          child: Container(
+            width: double.infinity,
+            // height: double.infinity,
+            decoration: BoxDecoration(
+              color: kWhiteBgColor,
+            ),
+            padding: EdgeInsets.fromLTRB(20, topPadding, 20, 0),
             child: child,
           ),
         ),

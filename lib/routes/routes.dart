@@ -6,9 +6,10 @@ class Routes {
   static const profile = "/profile";
   static const editProfile = "/profile/edit";
   static const search = "/search";
-  static const bookmark = "/bookmark";
+  static const favorite = "/favorite";
   static const login = "/login";
   static const register = "/register";
+  static const bookDetail = "/book/detail";
 }
 
 class AppRoute extends Module {
@@ -30,8 +31,12 @@ class AppRoute extends Module {
       child: (context) => const SearchPage(),
       transition: TransitionType.downToUp,
     );
-    r.child(Routes.bookmark, child: (context) => const BookmarkPage());
+    r.child(Routes.favorite, child: (context) => const BookFavoritePage());
     r.child(Routes.register, child: (context) => const RegisterPage());
     r.child(Routes.login, child: (context) => const LoginPage());
+    r.child(
+      Routes.bookDetail,
+      child: (context) => const BookDetailPage(),
+    );
   }
 }

@@ -23,6 +23,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return MyListView(
       children: [
+        const SizedBox(
+          height: 10,
+        ),
         CarouselSlider(
           options: CarouselOptions(
             autoPlay: true,
@@ -74,7 +77,11 @@ class _HomePageState extends State<HomePage> {
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 10),
-                    ButtonPrimary(title: "View Book", callbackfunc: () {})
+                    ButtonPrimary(
+                        title: "View Book",
+                        callbackfunc: () {
+                          Modular.to.pushNamed(Routes.bookDetail);
+                        })
                   ],
                 ),
               ),
