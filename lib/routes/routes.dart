@@ -10,6 +10,8 @@ class Routes {
   static const login = "/login";
   static const register = "/register";
   static const bookDetail = "/book/detail";
+  static const cart = "/cart";
+  static const checkout = "/checkout";
 }
 
 class AppRoute extends Module {
@@ -38,5 +40,7 @@ class AppRoute extends Module {
       Routes.bookDetail,
       child: (context) => const BookDetailPage(),
     );
+    r.child(Routes.cart, child: (context) => const CartPage());
+    r.child(Routes.checkout, child: (context) => const CheckoutPage());
   }
 }

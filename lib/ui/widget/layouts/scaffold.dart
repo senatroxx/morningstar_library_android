@@ -34,7 +34,9 @@ class MyScaffold extends StatelessWidget {
         body: SingleChildScrollView(
           child: Container(
             width: double.infinity,
-            // height: double.infinity,
+            constraints: BoxConstraints(
+              minHeight: MediaQuery.of(context).size.height,
+            ),
             decoration: BoxDecoration(
               color: kWhiteBgColor,
             ),

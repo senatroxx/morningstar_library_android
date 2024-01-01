@@ -65,7 +65,9 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                   count: 20,
                   child: Icon(Icons.shopping_cart_outlined, color: kBlackColor),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Modular.to.pushNamed(Routes.cart);
+                },
               ),
               ElevatedButton(
                 onPressed: () {
