@@ -1,12 +1,14 @@
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 // import 'package:intl/intl.dart';
 // import 'package:reactive_date_time_picker/reactive_date_time_picker.dart';
-import 'package:reactive_forms/reactive_forms.dart';
+// import 'package:reactive_forms/reactive_forms.dart';
 import 'package:morningstar_library/core/helper/helper.dart';
 import 'package:tailwind_colors/tailwind_colors.dart';
 
 part 'text_field.dart';
 part 'dropdown_field.dart';
+part 'dropdown_field2.dart';
 // part 'number_field.dart';
 // part 'phone_field.dart';
 // part 'date_field.dart';
@@ -30,7 +32,7 @@ InputDecoration inputDecoration(hint, {bool borderAll = false, Color? color}) =>
           borderSide: BorderSide(color: color ?? kPrimaryColor)),
       enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: TW3Colors.neutral.shade300)),
+          borderSide: BorderSide(color: kBorderColor)),
       isDense: true,
       hintStyle: kSubtitleTextStyle.copyWith(
         fontSize: 14,

@@ -15,8 +15,10 @@ Color kPrimaryColor = Color(TW3Colors.blue.shade500.value);
 Color kWhiteBgColor = Color(TW3Colors.gray.shade100.value);
 Color kBlackColor = Color(TW3Colors.neutral.shade700.value);
 Color kSubtitleColor = Color(TW3Colors.neutral.shade500.value);
-Color kBorderColor = Color(TW3Colors.neutral.shade200.value);
+Color kBorderColor = Color(TW3Colors.neutral.shade300.value);
 Color kDangerColor = Color(TW3Colors.red.shade500.value);
+Color kSuccessColor = Color(TW3Colors.green.shade700.value);
+Color kSuccessBgColor = Color(TW3Colors.green.shade300.value);
 const Color kGreyColor = Color(0xFF9F9F9F);
 const Color kWhiteColor = Color(0xFFFFFFFF);
 const Color kStarColor = Color(0xFFFFC700);
@@ -103,6 +105,20 @@ TextStyle kSmallSemiBoldTextStyle = TextStyle(
 TextStyle kSubtitleTextStyle = TextStyle(
   fontFamily: "Inter",
   fontSize: 14,
+  fontWeight: FontWeight.w400,
+  color: kSubtitleColor,
+);
+
+TextStyle kSubtitleSemiBoldTextStyle = TextStyle(
+  fontFamily: "Inter",
+  fontSize: 14,
+  fontWeight: FontWeight.w600,
+  color: kSubtitleColor,
+);
+
+TextStyle kCaptionTextStyle = TextStyle(
+  fontFamily: "Inter",
+  fontSize: 12,
   fontWeight: FontWeight.w400,
   color: kSubtitleColor,
 );

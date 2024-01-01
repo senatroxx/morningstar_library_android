@@ -19,6 +19,7 @@ dependencies:
   image_cropper: ^5.0.0
   reactive_forms: ^16.1.0
   carousel_slider: ^4.2.1
+  dropdown_button2: ^2.3.9
 
 dev_dependencies:
   flutter_test:
