@@ -14,13 +14,15 @@ class InvoicePage extends StatelessWidget {
         formName: "formName",
         icon: Icon(Icons.search),
       ),
-      const SizedBox(height: 10,),
+      const SizedBox(
+        height: 5,
+      ),
       SizedBox(
         height: 35,
         child: ListView(
           scrollDirection: Axis.horizontal,
           shrinkWrap: true,
-          physics: ClampingScrollPhysics(),
+          physics: const ClampingScrollPhysics(),
           children: [
             CustomDropdownField2(
               "All Status",
@@ -44,7 +46,7 @@ class InvoicePage extends StatelessWidget {
         ),
       ),
       const SizedBox(
-        height: 10,
+        height: 15,
       ),
       InvoiceCard(),
     ]);

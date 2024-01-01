@@ -116,10 +116,17 @@ TextStyle kSubtitleSemiBoldTextStyle = TextStyle(
   color: kSubtitleColor,
 );
 
-TextStyle kCaptionTextStyle = TextStyle(
+TextStyle kXSmallTextStyle = TextStyle(
   fontFamily: "Inter",
   fontSize: 12,
   fontWeight: FontWeight.w400,
+  color: kSubtitleColor,
+);
+
+TextStyle kXSmallSemiBoldTextStyle = TextStyle(
+  fontFamily: "Inter",
+  fontSize: 12,
+  fontWeight: FontWeight.w600,
   color: kSubtitleColor,
 );
 
