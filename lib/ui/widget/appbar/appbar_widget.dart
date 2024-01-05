@@ -61,10 +61,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                   elevation: MaterialStateProperty.all(0),
                 ),
-                child: Badge.count(
-                  count: 20,
-                  child: Icon(Icons.shopping_cart_outlined, color: kBlackColor),
-                ),
+                child: Icon(Icons.shopping_cart_outlined, color: kBlackColor),
                 onPressed: () {
                   Modular.to.pushNamed(Routes.cart);
                 },

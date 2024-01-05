@@ -1,22 +1,34 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_modular/flutter_modular.dart'
+    hide ModularWatchExtension;
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:morningstar_library/core/helper/extension/extension.dart';
 import 'package:morningstar_library/core/helper/helper.dart';
+import 'package:morningstar_library/cubit/cubit.dart';
+import 'package:morningstar_library/data/data.dart';
+import 'package:morningstar_library/data/database/database.dart';
+import 'package:morningstar_library/data/model/request/request.dart';
 import 'package:morningstar_library/routes/routes.dart';
 import 'package:morningstar_library/ui/widget/appbar/appbar_widget.dart';
 import 'package:morningstar_library/ui/widget/bottom_nav/bottom_nav.dart';
 import 'package:morningstar_library/ui/widget/card/card.dart';
 import 'package:morningstar_library/ui/widget/custom_field/custom_field.dart';
+import 'package:morningstar_library/ui/widget/image/image.dart';
 import 'package:morningstar_library/ui/widget/layouts/layouts.dart';
+import 'package:morningstar_library/ui/widget/modal/modal.dart';
 import 'package:morningstar_library/ui/widget/ounter/counter_widget.dart';
 import 'package:morningstar_library/ui/widget/widget.dart';
+import 'package:reactive_forms/reactive_forms.dart';
 import 'package:tailwind_colors/tailwind_colors.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+// import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 part 'main/main_page.dart';
 part 'home/home_page.dart';
@@ -30,3 +42,5 @@ part 'book/detail_page.dart';
 part 'book/favorite_page.dart';
 part 'cart/cart_page.dart';
 part 'checkout/checkout_page.dart';
+part 'membership/membership_page.dart';
+part 'checkout/shipping_page.dart';

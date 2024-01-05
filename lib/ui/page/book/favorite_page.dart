@@ -1,7 +1,16 @@
 part of "../page.dart";
 
-class BookFavoritePage extends StatelessWidget {
+class BookFavoritePage extends StatefulWidget {
   const BookFavoritePage({super.key});
+
+  @override
+  State<BookFavoritePage> createState() => _BookFavoritePageState();
+}
+
+class _BookFavoritePageState extends State<BookFavoritePage> {
+  final form = FormGroup({
+    "formName": FormControl<String>(validators: [Validators.required]),
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -10,11 +19,14 @@ class BookFavoritePage extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        const CustomTextField(
-          "Search your favorited book",
-          formName: "formName",
-          icon: Icon(Icons.search),
-        ),
+        // ReactiveForm(
+        //   formGroup: form,
+        //   child: const CustomTextField(
+        //     "Search your favorited book",
+        //     formName: "formName",
+        //     icon: Icon(Icons.search),
+        //   ),
+        // ),
         const SizedBox(height: 10),
         Text(
           "170 Books",

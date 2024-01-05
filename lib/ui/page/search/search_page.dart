@@ -1,7 +1,16 @@
 part of '../page.dart';
 
-class SearchPage extends StatelessWidget {
+class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
+
+  @override
+  State<SearchPage> createState() => _SearchPageState();
+}
+
+class _SearchPageState extends State<SearchPage> {
+  final form = FormGroup({
+    ...CustomFormControl.name,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -35,13 +44,16 @@ class SearchPage extends StatelessWidget {
                   ),
                 ),
               ),
-              const Expanded(
-                child: CustomTextField(
-                  "Search",
-                  formName: "formName",
-                  icon: Icon(Icons.search),
-                ),
-              ),
+              // Expanded(
+              //   child: ReactiveForm(
+              //     formGroup: form,
+              //     child: const CustomTextField(
+              //       "Search",
+              //       formName: "formName",
+              //       icon: Icon(Icons.search),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
           ListView.builder(

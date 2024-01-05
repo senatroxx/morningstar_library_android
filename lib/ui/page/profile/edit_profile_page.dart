@@ -10,42 +10,48 @@ class EditProfilePage extends StatefulWidget {
 class _EditProfilePageState extends State<EditProfilePage> {
   File? _image;
   final picker = ImagePicker();
+  final form = FormGroup({
+    "formName": FormControl<String>(validators: [Validators.required]),
+  });
 
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
       title: "Edit Profile",
       showAction: false,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          profilePicture(),
-          const SizedBox(
-            height: 20,
-          ),
-          const CustomTextField(
-            "Full Name",
-            formName: "formName",
-            initialValue: "Jane Doe",
-          ),
-          const CustomTextField(
-            "Email",
-            formName: "formName",
-            initialValue: "janedoe@gmail.com",
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          const CustomDropdownField(
-            "Gender",
-            formName: "formName",
-            hint: "Choose Gender",
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          ButtonPrimary(title: "Save Changes", callbackfunc: () {})
-        ],
+      child: ReactiveForm(
+        formGroup: form,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            profilePicture(),
+            const SizedBox(
+              height: 20,
+            ),
+            // const CustomTextField(
+            //   "Full Name",
+            //   formName: "formName",
+            //   initialValue: "Jane Doe",
+            // ),
+            // const CustomTextField(
+            //   "Email",
+            //   formName: "formName",
+            //   initialValue: "janedoe@gmail.com",
+            // ),
+            const SizedBox(
+              height: 20,
+            ),
+            const CustomDropdownField(
+              "Gender",
+              formName: "formName",
+              hint: "Choose Gender",
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ButtonPrimary(title: "Save Changes", callbackfunc: () {})
+          ],
+        ),
       ),
     );
   }

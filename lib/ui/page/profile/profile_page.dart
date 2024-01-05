@@ -1,10 +1,33 @@
 part of '../page.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
 
   @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  User? user = const User();
+
+  @override
+  void initState() {
+    super.initState();
+    StoreKeyValue().getUser().then((value) {
+      setState(() {
+        user = value;
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
+    // ignore: no_leading_underscores_for_local_identifiers
+    void _logout() {
+      context.read<AuthenticationCubit>().logout();
+      Modular.to.navigate(Routes.login);
+    }
+
     return Scaffold(
       appBar: const MyAppBar(
         title: "Profile",
@@ -34,7 +57,7 @@ class ProfilePage extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                'Jane Doe',
+                user!.name ?? "",
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -43,7 +66,7 @@ class ProfilePage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               Text(
-                'janedoe@gmail.com',
+                user!.email ?? "",
                 style: TextStyle(
                   fontSize: 16,
                   color: TW3Colors.neutral.shade700,
@@ -75,7 +98,7 @@ class ProfilePage extends StatelessWidget {
                 title: const Text("Logout"),
                 trailing: const Icon(Icons.arrow_forward_ios),
                 onTap: () {
-                  Modular.to.pushNamed(Routes.login);
+                  _logout();
                 },
               ),
             ],

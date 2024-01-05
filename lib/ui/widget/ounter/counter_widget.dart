@@ -1,11 +1,19 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:morningstar_library/core/helper/helper.dart';
 
 class Counter extends StatefulWidget {
   final Function(int) onChanged;
+  final bool plusDisabled;
+  final int value;
+  final bool minusDisabled;
 
-  const Counter({super.key, required this.onChanged});
+  const Counter({
+    super.key,
+    required this.value,
+    required this.onChanged,
+    this.plusDisabled = false,
+    this.minusDisabled = false,
+  });
 
   @override
   State<Counter> createState() => _CounterState();
@@ -44,7 +52,7 @@ class _CounterState extends State<Counter> {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           GestureDetector(
-            onTap: _decrementCounter,
+            onTap: widget.minusDisabled ? null : _decrementCounter,
             child: Container(
               decoration: BoxDecoration(
                 border: Border(
@@ -55,18 +63,19 @@ class _CounterState extends State<Counter> {
                 ),
               ),
               padding: const EdgeInsets.all(8.0),
-              child: const Icon(
+              child: Icon(
                 Icons.remove,
                 size: 16,
+                color: widget.minusDisabled ? kGreyColor : null,
               ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text('$_counter', style: kBaseTextStyle),
+            child: Text('${widget.value}', style: kBaseTextStyle),
           ),
           GestureDetector(
-            onTap: _incrementCounter,
+            onTap: widget.plusDisabled ? null : _incrementCounter,
             child: Container(
               decoration: BoxDecoration(
                 border: Border(
@@ -77,9 +86,10 @@ class _CounterState extends State<Counter> {
                 ),
               ),
               padding: const EdgeInsets.all(8.0),
-              child: const Icon(
+              child: Icon(
                 Icons.add,
                 size: 16,
+                color: widget.plusDisabled ? kGreyColor : null,
               ),
             ),
           ),

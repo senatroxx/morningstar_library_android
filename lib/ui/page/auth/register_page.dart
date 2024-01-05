@@ -1,12 +1,111 @@
 part of '../page.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
 
   @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  final form = FormGroup({
+    ...CustomFormControl.email,
+    ...CustomFormControl.name,
+    ...CustomFormControl.phone,
+    ...CustomFormControl.password,
+    ...CustomFormControl.passwordConfirmation,
+  }, validators: [
+    Validators.mustMatch(FormName.password, FormName.passwordConfirmation)
+  ]);
+
+  String get email => form.control(FormName.email).value;
+  String get name => form.control(FormName.name).value;
+  String get phone => form.control(FormName.phone).value;
+  String get password => form.control(FormName.password).value;
+  String get passwordConfirmation =>
+      form.control(FormName.passwordConfirmation).value;
+
+  late RequestRegister data;
+
+  @override
+  void initState() {
+    super.initState();
+    form.reset();
+  }
+
+  void _register() {
+    form.markAllAsTouched();
+    if (form.valid) {
+      FocusScope.of(context).unfocus();
+      data = RequestRegister(
+          email: email.trim(),
+          name: name.trim(),
+          phone: phone.trim(),
+          password: password.trim(),
+          passwordConfirmation: passwordConfirmation.trim());
+      context.read<AuthenticationCubit>().register(data: data);
+    }
+  }
+
+  Widget _form() {
+    return ReactiveForm(
+      formGroup: form,
+      child: const Column(
+        children: [
+          CustomTextField(
+            "Full Name",
+            formName: FormName.name,
+            icon: Icon(Icons.person),
+          ),
+          CustomTextField(
+            "Email",
+            formName: FormName.email,
+            icon: Icon(Icons.email),
+          ),
+          CustomTextField(
+            "Phone Number (0812XXXX)",
+            formName: FormName.phone,
+            icon: Icon(Icons.phone),
+          ),
+          CustomTextField(
+            "Password",
+            formName: FormName.password,
+            hideText: true,
+            icon: Icon(Icons.lock),
+          ),
+          CustomTextField(
+            "Repeat Password",
+            formName: FormName.passwordConfirmation,
+            hideText: true,
+            icon: Icon(Icons.lock),
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
+    return BlocListener<AuthenticationCubit, AuthenticationState>(
+      listener: (context, state) async {
+        if (state is AuthenticationLoadDialog) {
+          return showLoad(context);
+        } else {
+          hideLoad(context);
+        }
+
+        if (state is AuthenticationFailure) {
+          return Future.delayed(Duration.zero, () {
+            return SnackBar(content: Text(state.error));
+          });
+        }
+
+        if (state is AuthenticationHasRegistered) {
+          Modular.to.navigate(Routes.login);
+        }
+      },
+      child: MyScaffold(
+        showAppBar: false,
         child: Column(
           children: [
             const SizedBox(
@@ -36,32 +135,15 @@ class RegisterPage extends StatelessWidget {
             const SizedBox(
               height: 90,
             ),
-            const CustomTextField(
-              "Full Name",
-              formName: "formName",
-              icon: Icon(Icons.person),
-            ),
-            const CustomTextField(
-              "Email",
-              formName: "formName",
-              icon: Icon(Icons.email),
-            ),
-            const CustomTextField(
-              "Password",
-              formName: "formName",
-              icon: Icon(Icons.lock),
-            ),
-            const CustomTextField(
-              "Repeat Password",
-              formName: "formName",
-              icon: Icon(Icons.lock),
-            ),
+            _form(),
             const SizedBox(
               height: 50,
             ),
             ButtonPrimary(
               title: "Sign Up",
-              callbackfunc: () {},
+              callbackfunc: () {
+                _register();
+              },
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

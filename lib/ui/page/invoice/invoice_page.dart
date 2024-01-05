@@ -1,7 +1,16 @@
 part of '../page.dart';
 
-class InvoicePage extends StatelessWidget {
+class InvoicePage extends StatefulWidget {
   const InvoicePage({super.key});
+
+  @override
+  State<InvoicePage> createState() => _InvoicePageState();
+}
+
+class _InvoicePageState extends State<InvoicePage> {
+  final form = FormGroup({
+    ...CustomFormControl.name,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -9,11 +18,14 @@ class InvoicePage extends StatelessWidget {
       const SizedBox(
         height: 10,
       ),
-      const CustomTextField(
-        "Search transaction, invoice, etc.",
-        formName: "formName",
-        icon: Icon(Icons.search),
-      ),
+      // ReactiveForm(
+      //   formGroup: form,
+      //   child: const CustomTextField(
+      //     "Search transaction, invoice, etc.",
+      //     formName: "formName",
+      //     icon: Icon(Icons.search),
+      //   ),
+      // ),
       const SizedBox(
         height: 5,
       ),
