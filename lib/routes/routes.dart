@@ -2,6 +2,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:morningstar_library/ui/page/page.dart';
 
 class Routes {
+  static const onboarding = "/onboarding";
   static const home = "/";
   static const profile = "/profile";
   static const editProfile = "/profile/edit";
@@ -22,6 +23,7 @@ class AppRoute extends Module {
   @override
   void routes(r) {
     super.routes(r);
+    r.child(Routes.onboarding, child: (_) => const OnboardingPage());
     r.child(Routes.home, child: (_) => const MainPage());
     r.child(Routes.profile,
         child: (_) => const ProfilePage(), transition: TransitionType.downToUp);

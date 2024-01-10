@@ -44,3 +44,4 @@ part 'cart/cart_page.dart';
 part 'checkout/checkout_page.dart';
 part 'membership/membership_page.dart';
 part 'checkout/shipping_page.dart';
+part 'onboarding/onboarding.dart';
