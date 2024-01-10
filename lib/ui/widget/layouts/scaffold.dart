@@ -6,6 +6,7 @@ class MyScaffold extends StatelessWidget {
   final bool showAction;
   final Widget? bottomNavigationBar;
   final bool showAppBar;
+  final Color? backgroundColor;
 
   const MyScaffold({
     required this.child,
@@ -13,6 +14,7 @@ class MyScaffold extends StatelessWidget {
     this.showAction = true,
     this.showAppBar = true,
     this.bottomNavigationBar,
+    this.backgroundColor,
     super.key,
   });
 
@@ -38,7 +40,7 @@ class MyScaffold extends StatelessWidget {
               minHeight: MediaQuery.of(context).size.height,
             ),
             decoration: BoxDecoration(
-              color: kWhiteBgColor,
+              color: backgroundColor ?? kWhiteBgColor,
             ),
             padding: EdgeInsets.fromLTRB(20, topPadding, 20, 0),
             child: child,

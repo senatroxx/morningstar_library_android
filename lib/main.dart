@@ -9,34 +9,13 @@ import 'package:morningstar_library/data/data.dart';
 import 'package:morningstar_library/routes/routes.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      statusBarIconBrightness: Brightness.light,
-    ),
-  );
-
-  checkStatusUser();
-
+  Modular.setInitialRoute('/onboarding');
   runApp(ModularApp(module: AppRoute(), child: const MyApp()));
-}
-
-void checkStatusUser() async {
-  String? token = await StoreKeyValue().getToken();
-
-  if (token == null) {
-    Modular.to.navigate(Routes.login);
-  } else {
-    // Modular.to.navigate(Routes.home);
-    Modular.to.navigate(Routes.home);
-  }
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -69,5 +48,15 @@ class MyApp extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+void checkStatusUser() async {
+  String? token = await StoreKeyValue().getToken();
+
+  if (token == null) {
+    Modular.to.navigate(Routes.login);
+  } else {
+    Modular.to.navigate(Routes.home);
   }
 }
